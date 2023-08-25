@@ -1,0 +1,47 @@
+.chord {
+  border-spacing: 0;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+
+caption {
+  font-size: 20px;
+  font-weight: 700;
+  height: 18px;
+}
+
+thead {
+  font-size: 16px;
+}
+
+tbody {
+  font-size: 14px;
+}
+
+.chord td, .chord th {
+  height: 24px;
+  width: 24px;
+}
+
+.chord td {
+  background-color: var(--bg-notation-color);
+  border-left: 1px solid var(--main-color);
+  border-top: 1px solid var(--main-color);
+}
+
+.chord td:last-child {
+  background-color: transparent;
+  border-top: none;
+}
+
+.chord tbody tr:first-child td:not(:last-child) {
+  border-top: 3px solid var(--main-color);
+}
+
+.chord tbody tr:last-child td:not(:last-child) {
+  border-bottom: 1px solid var(--main-color);
+}
+
+.muted {
+  margin-left: -23px;
+}
