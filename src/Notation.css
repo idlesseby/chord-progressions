@@ -35,7 +35,7 @@ tbody {
 }
 
 .chord tbody tr:first-child td:not(:last-child) {
-  border-top: 3px solid var(--main-color);
+  border-top: 2px solid var(--main-color);
 }
 
 .chord tbody tr:last-child td:not(:last-child) {
@@ -44,4 +44,54 @@ tbody {
 
 .muted {
   margin-left: -23px;
+}
+
+.circle {
+  width: 14px;
+  height: 14px;
+  background-color: var(--main-color);
+  color: black;
+  border-radius: 50%;
+  margin-left: -9px;
+}
+
+@media (min-width: 720px) {
+
+  caption {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  thead {
+    font-size: 20px;
+  }
+  
+  tbody {
+    font-size: 18px;
+  }
+
+  .chord td, .chord th {
+    height: 40px;
+    width: 40px;
+  }
+
+  .chord td {
+    border-left: 2px solid var(--main-color);
+    border-top: 2px solid var(--main-color);
+  }
+
+  .chord tbody tr:first-child td:not(:last-child) {
+    border-top: 4px solid var(--main-color);
+  }
+
+  .muted {
+    margin-left: -38px;
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    margin-left: -12px;
+  }
+  
 }
