@@ -4,7 +4,7 @@ const Notation = (chord) => {
 
   return (
     <table className='chord'>
-      <caption>{chord.chord.name}</caption>
+      <caption className='caption-top'>{chord.chord.name}</caption>
       <thead>
         <tr>
           <th></th>
@@ -17,31 +17,31 @@ const Notation = (chord) => {
         <tr>
           <th>{chord.chord.frets[0]}</th>
           {chord.chord.tab.map((note, index) => {
-            return <td key={index}>{note === 1 ? (<div className='circle'></div>) : null}</td>
+            return <td key={index}>{note === chord.chord.frets[0] ? (<div className='circle'></div>) : null}</td>
           })}
         </tr>
         <tr>
           <th></th>
           {chord.chord.tab.map((note, index) => {
-            return <td key={index}>{note === 2 ? (<div className='circle'></div>) : null}</td>
-          })}
-        </tr>
-        <tr>
-          <th>{chord.chord.frets[1]}</th>
-          {chord.chord.tab.map((note, index) => {
-            return <td key={index}>{note === 3 ? (<div className='circle'></div>) : null}</td>
-          })}
-        </tr>
-        <tr>
-          <th></th>
-          {chord.chord.tab.map((note, index) => {
-            return <td key={index}>{note === 4 ? (<div className='circle'></div>) : null}</td>
+            return <td key={index}>{note === chord.chord.frets[1] ? (<div className='circle'></div>) : null}</td>
           })}
         </tr>
         <tr>
           <th>{chord.chord.frets[2]}</th>
           {chord.chord.tab.map((note, index) => {
-            return <td key={index}>{note === 5 ? (<div className='circle'></div>) : null}</td>
+            return <td key={index}>{note === chord.chord.frets[2] ? (<div className='circle'></div>) : null}</td>
+          })}
+        </tr>
+        <tr>
+          <th></th>
+          {chord.chord.tab.map((note, index) => {
+            return <td key={index}>{note === chord.chord.frets[3] ? (<div className='circle'></div>) : null}</td>
+          })}
+        </tr>
+        <tr>
+          <th>{chord.chord.frets[4]}</th>
+          {chord.chord.tab.map((note, index) => {
+            return <td key={index}>{note === chord.chord.frets[4] ? (<div className='circle'></div>) : null}</td>
           })}
         </tr>
       </tbody>

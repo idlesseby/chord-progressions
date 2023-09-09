@@ -1,7 +1,7 @@
 .chord {
   border-spacing: 0;
   color: var(--main-color);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 caption {
@@ -70,6 +70,10 @@ tbody {
     font-size: 18px;
   }
 
+  .chord {
+    margin-bottom: 16px;
+  }
+
   .chord td, .chord th {
     height: 40px;
     width: 40px;
@@ -93,5 +97,4 @@ tbody {
     height: 20px;
     margin-left: -12px;
   }
-  
 }

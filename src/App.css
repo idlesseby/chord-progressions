@@ -6,15 +6,25 @@ header {
 }
 
 section {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.progression-name {
-  font-size: 32px;
+.logo-title {
+  font-size: 18px;
   font-weight: 700;
+}
+
+.progression-name {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .container {
@@ -22,6 +32,7 @@ section {
   justify-content: center;
   flex-wrap: wrap;
   max-width: 400px;
+  margin-bottom: 20px;
 }
 
 .progression-button {
@@ -44,11 +55,16 @@ section {
 
 @media (min-width: 720px) {
 
+  .logo-title {
+    font-size: 28px;
+  }
+
   .progression-name {
     font-size: 64px;
   }
 
   .container {
     max-width: max-content;
+    margin-bottom: 40px;
   }
 }

@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
-import chords from './chords.js'
-import titles from './titles.js'
-import Notation from './Notation'
+import chords from './data/chords.js'
+import titles from './data/titles.js'
+import Notation from './components/notation/Notation'
 
 const App = () => {
 
-  const [title, setTitle] = React.useState('Memories')
+  const [title, setTitle] = useState('Memories')
+  const [chordProgression, setChordProgression] = useState([])
 
   const getTitle = () => {
     setTitle(() => {
@@ -14,21 +15,37 @@ const App = () => {
     })
   }
 
+  const getChordProgression = () => {
+
+    const newNumbers = []
+
+    for(let i=0; i<4; i++) {
+      newNumbers.push(Math.floor(Math.random() * 12))
+    }
+
+    setChordProgression(newNumbers)
+  }
+
+  const createChordProgression = () => { 
+    getTitle()
+    getChordProgression()
+    console.log(chordProgression)
+  }
+
   return <>
     <header>
-      <p>logo</p>
+      <span className='logo-title'>Minpulse</span>
       <p>menu</p>
     </header>
     <main>
       <section>
         <div className="progression-name">{title}</div>
         <div className="container">
-          <Notation chord={chords[0]}/>
-          <Notation chord={chords[1]}/>
-          <Notation chord={chords[0]}/>
-          <Notation chord={chords[1]}/>
+          {chordProgression.map(number => {
+            return <Notation chord={chords[number]}/>
+          })}
         </div>
-        <button className="progression-button" type="button" onClick={getTitle}>Generate Chords</button>
+        <button className="progression-button" type="button" onClick={createChordProgression}>Generate Chords</button>
       </section>
     </main>
   </>
