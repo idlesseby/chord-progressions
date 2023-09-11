@@ -44,6 +44,7 @@ tbody {
 
 .muted {
   margin-left: -23px;
+  line-height: 0;
 }
 
 .circle {
@@ -60,6 +61,7 @@ tbody {
   caption {
     font-size: 32px;
     font-weight: 700;
+    margin-bottom: 16px;
   }
 
   thead {
