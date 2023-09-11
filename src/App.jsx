@@ -6,15 +6,13 @@ import Notation from './components/notation/Notation'
 import getKeyScale from './utils/getKeyScale'
 
 const App = () => {
-
   const [title, setTitle] = useState('')
   const [chordProgression, setChordProgression] = useState([])
-  const semitones = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-  const chordProgressions = [4, 6, 5]
-  const majorScale = [0,2,4,5,7,9,11]
+  const [keyScale, setKeyScale] = useState([])
 
-  let keyOf
-  let progression
+  const semitones = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  const chordProgressions = [2, 5, 1]
+  const majorScale = [0,2,4,5,7,9,11]
 
   const getTitle = () => {
     setTitle(() => {
@@ -23,15 +21,17 @@ const App = () => {
   }
 
   const createChordProgression = () => {
-    keyOf = semitones[Math.floor(Math.random() * semitones.length)]
-    progression = chordProgressions//[Math.floor(Math.random() * chordProgressions.length)]
-
-    const keyScale = getKeyScale(semitones, keyOf, majorScale)
+    let keyOf = semitones[Math.floor(Math.random() * semitones.length)]
+    let newKeyScale = getKeyScale(semitones, keyOf, majorScale)
+    let progression = chordProgressions//[Math.floor(Math.random() * chordProgressions.length)]
 
     const newChordProgression = progression.map(number => {
-      return keyScale[number - 1]
+      return newKeyScale[number - 1]
     })
+    console.log(keyOf)
+    console.log(newKeyScale)
 
+    setKeyScale(newKeyScale)
     setChordProgression(newChordProgression)
   }
 
@@ -50,7 +50,12 @@ const App = () => {
         <div className="progression-name">{title}</div>
         <div className="container">
           {chordProgression.map(number => {
-            return <Notation chord={chords[number].variant[0]}/>
+            return <Notation chord={
+                number === keyScale[0] || number === keyScale[3] || number === keyScale[4] ? chords[number].variant[Math.floor(Math.random() * 2)] 
+                : number === keyScale[1] || number === keyScale[2] || number === keyScale[5] ? chords[number].variant[Math.floor(Math.random() * 2) + 2] 
+                : chords[number].variant[0]
+              }
+            />
           })}
         </div>
         <button className="progression-button" type="button" onClick={getChordProgression}>Generate Chords</button>
