@@ -1,8 +1,6 @@
-# React + Vite
+# Chord Progression Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Simple songwriting helper that randomizes chords based on popular chord progressions and suggests a random worktitle.
+Chord diagrams are visualized for the guitar in standard tuning (EADGBE).
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Link: https://chord-progression-generator.surge.sh/

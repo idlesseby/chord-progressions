@@ -11,25 +11,26 @@ const App = () => {
   const [keyScale, setKeyScale] = useState([])
 
   const semitones = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-  const chordProgressions = [2, 5, 1]
+  const chordProgressions = [[2, 5, 1], [4, 6, 5], [4, 5, 3], [6, 3, 4, 2], [4, 3, 6, 6], [1, 6, 4, 5]]
   const majorScale = [0,2,4,5,7,9,11]
 
   const getTitle = () => {
+
+    const filteredTitles = titles.filter(title => title.length <= 16)
+
     setTitle(() => {
-      return titles[Math.floor(Math.random() * titles.length)]
+      return filteredTitles[Math.floor(Math.random() * filteredTitles.length)]
     })
   }
 
   const createChordProgression = () => {
     let keyOf = semitones[Math.floor(Math.random() * semitones.length)]
     let newKeyScale = getKeyScale(semitones, keyOf, majorScale)
-    let progression = chordProgressions//[Math.floor(Math.random() * chordProgressions.length)]
+    let progression = chordProgressions[Math.floor(Math.random() * chordProgressions.length)]
 
     const newChordProgression = progression.map(number => {
       return newKeyScale[number - 1]
     })
-    console.log(keyOf)
-    console.log(newKeyScale)
 
     setKeyScale(newKeyScale)
     setChordProgression(newChordProgression)
@@ -41,10 +42,6 @@ const App = () => {
   }
 
   return <>
-    <header>
-      <span className='logo-title'>Minpulse</span>
-      <p>menu</p>
-    </header>
     <main>
       <section>
         <div className="progression-name">{title}</div>

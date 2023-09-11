@@ -1,13 +1,14 @@
 .chord {
   border-spacing: 0;
   color: var(--main-color);
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 caption {
   font-size: 20px;
   font-weight: 700;
   height: 18px;
+  margin-bottom: 4px;
 }
 
 thead {
@@ -48,8 +49,8 @@ tbody {
 }
 
 .circle {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
   background-color: var(--main-color);
   color: black;
   border-radius: 50%;
